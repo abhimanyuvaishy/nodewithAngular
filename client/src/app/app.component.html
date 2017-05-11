@@ -1,0 +1,40 @@
+<h1>
+  {{title}}
+</h1><br/>
+<table border="1px">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Age</th>
+      <th>Designation</th>
+      <th>Skills</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of employees">
+      <td>{{item.first_name}}</td>
+      <td>{{item.last_name}}</td>
+      <td>{{item.age}}</td>
+      <td>{{item.designation}}</td>
+      <td>
+        <span *ngFor="let skill of item.Skills">{{skill}} ,<br/></span>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+<button (click)="saveData()" >Add Data</button>
+<!--<form>
+  First name:<br>
+  <input type="text" name="first_name" [ngModel]="employee.first_name"><br>
+  Last name:<br>
+  <input type="text" name="last_name" [ngModel]="employee.last_name"><br>
+   Age:<br>
+  <input type="text" name="age" [ngModel]="employee.age"><br>
+   Designation:<br>
+  <input type="text" name="designation" [ngModel]="employee.designation"><br>
+  Skills:<br>
+  <input type="text" name="Skills" [ngModel]="employee.Skills"><br>
+</form>-->
